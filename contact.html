@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>contact</title>
+    <style>
+        body{
+            background-color: black;
+            color: red;
+             justify-content: center; 
+             align-items: center; 
+             display: flex;
+            height: 100vh;
+        } 
+    </style>
+    </head>
+    <body>
+   <h1> <span class="typewriter" id="typewriter"></span><span class="cursor">|</span> </h1>
+    <script>
+      const words = ["Coming Soon..."];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const el = document.getElementById("typewriter");
+      function type() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+          el.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          el.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+        }
+        let speed = isDeleting ? 60 : 100;
+        if (!isDeleting && charIndex === currentWord.length) {
+          // Pause at end of word
+          speed = 1500;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          speed = 300;
+        }
+        setTimeout(type, speed);
+      }
+      type();
+    </script>
+    </body>
+</html>
