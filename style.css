@@ -10,14 +10,13 @@ body {
   background-image: url("cyber-hero-bg.svg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+       background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
   color: aliceblue;
   font-family: sans-serif;
 }
 
-/* ===== NAV ===== */
 nav {
   display: flex;
   justify-content: space-between;
@@ -38,33 +37,32 @@ nav {
 }
 
 .navs a {
-                color: aliceblue;
-                text-decoration: none;
-                user-select: none;
-                font-size: 23px;
-                position: relative; /* ✅ Add this */
-            }
-
-            .navs a:hover {
-                color: #2f77c7;
-            }
-            
-            .navs a:before{
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left : 0px;
-                width: 100%;
-                height: 3px;
-                    background: linear-gradient(to right, darkblue,blue,lightblue,white);
-
-                 transform: scaleX(0);           /* ✅ Hidden by default */
-    transition: transform 0.3s ease;
-            }
-            .navs a:hover::before {
-    transform: scaleX(1); /* ✅ Show on hover */
+  color: aliceblue;
+  text-decoration: none;
+  user-select: none;
+  font-size: 23px;
+  position: relative;
 }
-/* ===== HR ===== */
+
+.navs a:hover {
+  color: var(--main-color);
+}
+
+.navs a:before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, darkblue, blue, lightblue, white);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navs a:hover::before {
+  transform: scaleX(1);
+}
 #hr-line {
   width: 90%;
   height: 2px;
@@ -72,17 +70,13 @@ nav {
   background-color: ghostwhite;
   margin: 10px auto;
 }
-
-/* ===== HOME SECTION ===== */
 .hm {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 50px;
+    padding: 60px 50px;
   gap: 70px;
 }
-
-/* ===== PROFILE IMAGE ===== */
 .home-img img {
   width: 25vw;
   border-radius: 50%;
@@ -90,9 +84,6 @@ nav {
   cursor: pointer;
   
   }
-
-
-/* ===== HOME CONTENT ===== */
 .hm-c {
   max-width: 600px;
   
@@ -117,7 +108,6 @@ nav {
   line-height: 1.4;
 }
 
-/* ===== TYPEWRITER ===== */
 .typewriter {
   color: var(--main-color);
 }
@@ -132,11 +122,8 @@ nav {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
 }
-
-/* ===== SOCIAL LINKS ===== */
 .slm {
-  display: flex;        /* fix: was inline-flex on wrong element */
-  gap: 15px;
+  display: flex;           gap: 15px;
   margin-top: 2rem;
 }
 
@@ -146,7 +133,7 @@ nav {
   align-items: center;
   width: 46px;
   height: 46px;
-  background: transparent;
+background: transparent;
   border: 0.2rem solid var(--main-color);
   border-radius: 50%;
   font-size: 1.3rem;
@@ -159,4 +146,18 @@ nav {
   background: var(--main-color);
   color: #0a0e1a;
   box-shadow: 0 0 15px var(--main-color);
+}
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .profile-pic {
+        width: 220px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
 }
