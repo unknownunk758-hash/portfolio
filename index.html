@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyPortfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <h1 id="name">Yash Rajak</h1>
+      <div class="navs">
+        <a href="index.html">Home</a>
+        <a href="#">Resume</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+
+    <hr id="hr-line" />
+
+    <section class="hm">
+      <div class="home-img">
+        <img src="profilepic.png" id="profile-pic" alt="Profile Picture" />
+      </div>
+      <div class="hm-c">
+        <h3>Hey, I'm</h3>
+        <h1>Yash Rajak</h1>
+        <h3>And I'm a <span class="typewriter" id="typewriter"></span><span class="cursor">|</span></h3>
+        <p>
+          I'm Yash Rajak, a student and aspiring Cloud &amp; Cybersecurity
+          professional. Focused on Linux, Networking, Cloud Computing, and
+          Security. I enjoy learning new technologies and building practical
+          skills through hands-on projects.
+        </p>
+        <div class="slm">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="mailto:rajakyash19@gmail.com"><i class="fa-solid fa-envelope-open"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // --- Typewriter Effect ---
+      const words = ["Cloud Engineer", "Cyber Security", "AI Enthusiast", "DevOps Learner"];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const el = document.getElementById("typewriter");
+
+      function type() {
+        const currentWord = words[wordIndex];
+
+        if (isDeleting) {
+          el.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          el.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        let speed = isDeleting ? 60 : 100;
+
+        if (!isDeleting && charIndex === currentWord.length) {
+          // Pause at end of word
+          speed = 1500;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          speed = 300;
+        }
+
+        setTimeout(type, speed);
+      }
+
+      type();
+    </script>
+  </body>
+</html>

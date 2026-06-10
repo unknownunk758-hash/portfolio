@@ -1,0 +1,162 @@
+:root {
+  --main-color: #378add;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("cyber-hero-bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: aliceblue;
+  font-family: sans-serif;
+}
+
+/* ===== NAV ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+#name {
+  color: aliceblue;
+  margin: 0;
+  user-select: none;
+  font-size: 35px;
+}
+
+.navs {
+  display: flex;
+  gap: 30px;
+}
+
+.navs a {
+                color: aliceblue;
+                text-decoration: none;
+                user-select: none;
+                font-size: 23px;
+                position: relative; /* ✅ Add this */
+            }
+
+            .navs a:hover {
+                color: #2f77c7;
+            }
+            
+            .navs a:before{
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left : 0px;
+                width: 100%;
+                height: 3px;
+                    background: linear-gradient(to right, darkblue,blue,lightblue,white);
+
+                 transform: scaleX(0);           /* ✅ Hidden by default */
+    transition: transform 0.3s ease;
+            }
+            .navs a:hover::before {
+    transform: scaleX(1); /* ✅ Show on hover */
+}
+/* ===== HR ===== */
+#hr-line {
+  width: 90%;
+  height: 2px;
+  border: none;
+  background-color: ghostwhite;
+  margin: 10px auto;
+}
+
+/* ===== HOME SECTION ===== */
+.hm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 50px;
+  gap: 70px;
+}
+
+/* ===== PROFILE IMAGE ===== */
+.home-img img {
+  width: 25vw;
+  border-radius: 50%;
+   margin-right: 40px;
+  cursor: pointer;
+  
+  }
+
+
+/* ===== HOME CONTENT ===== */
+.hm-c {
+  max-width: 600px;
+  
+}
+
+.hm-c h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom : 10px;
+}
+
+.hm-c h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom : 5px;
+}
+
+.hm-c p {
+  font-size: 20px;
+  margin-top: 1rem;
+  line-height: 1.4;
+}
+
+/* ===== TYPEWRITER ===== */
+.typewriter {
+  color: var(--main-color);
+}
+
+.cursor {
+  color: var(--main-color);
+  animation: blink 0.7s infinite;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ===== SOCIAL LINKS ===== */
+.slm {
+  display: flex;        /* fix: was inline-flex on wrong element */
+  gap: 15px;
+  margin-top: 2rem;
+}
+
+.slm a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  background: transparent;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 1.3rem;
+  color: var(--main-color);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.slm a:hover {
+  background: var(--main-color);
+  color: #0a0e1a;
+  box-shadow: 0 0 15px var(--main-color);
+}
