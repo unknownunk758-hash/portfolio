@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<title>contact</title>
-<style>
+    <head>
+        <meta charset="UTF-8" />
+        <title>resume</title>
+       <style>
 body{
     background-color: black;
     color: white;
-        } 
+    
+}
+.dots::after {
+    content: "";
+    animation: dots 2s infinite;
+}
+@keyframes dots {
+    0%   { content: ""; }
+    25%  { content: "."; }
+    50%  { content: ".."; }
+    75%  { content: "..."; }
+    100% { content: ""; }
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -57,57 +69,28 @@ nav {
   background-color: ghostwhite;
   margin: 10px auto;
 }
-.had{
+.hdr{
     justify-content: center; 
     align-items: center; 
     display: flex;
     height: 70vh;
    color : red;
 }
+
     </style>
     </head>
     <body>
- <nav>
+         <nav>
       <h1 id="name">Yash Rajak</h1>
       <div class="navs">
         <a href="index.html">Home</a>
         <a href="project.html">Projects</a>
-        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
     <hr id="hr-line" />
-
-<header class="had">
-   <h1> <span class="typewriter" id="typewriter"></span><span class="cursor">|</span> </h1>
-</header>
-    <script>
-      const words = ["Coming Soon..."];
-      let wordIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
-      const el = document.getElementById("typewriter");
-      function type() {
-        const currentWord = words[wordIndex];
-        if (isDeleting) {
-          el.textContent = currentWord.substring(0, charIndex - 1);
-          charIndex--;
-        } else {
-          el.textContent = currentWord.substring(0, charIndex + 1);
-          charIndex++;
-        }
-        let speed = isDeleting ? 60 : 100;
-        if (!isDeleting && charIndex === currentWord.length) {
-          // Pause at end of word
-          speed = 1500;
-          isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-          isDeleting = false;
-          wordIndex = (wordIndex + 1) % words.length;
-          speed = 300;
-        }
-        setTimeout(type, speed);
-      }
-      type();
-    </script>
+    <header class="hdr">
+     <h1>Coming Soon<span class="dots"></span></h1>
+    </header>
     </body>
 </html>
