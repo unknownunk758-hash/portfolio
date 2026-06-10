@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>resume</title>
+       <style>
+body{
+    background-color: black;
+    color: white;
+    
+}
+.dots::after {
+    content: "";
+    animation: dots 2s infinite;
+}
+@keyframes dots {
+    0%   { content: ""; }
+    25%  { content: "."; }
+    50%  { content: ".."; }
+    75%  { content: "..."; }
+    100% { content: ""; }
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+#name {
+  color: aliceblue;
+  margin: 0;
+  user-select: none;
+  font-size: 35px;
+}
+
+.navs {
+  display: flex;
+  gap: 30px;
+}
+.navs a {
+  color: aliceblue;
+  text-decoration: none;
+  user-select: none;
+  font-size: 23px;
+  position: relative;
+}
+.navs a:hover {
+  color: var(--main-color);
+}
+.navs a:before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, darkblue, blue, lightblue, white);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.navs a:hover::before {
+  transform: scaleX(1);
+}
+#hr-line {
+  width: 90%;
+  height: 2px;
+  border: none;
+  background-color: ghostwhite;
+  margin: 10px auto;
+}
+.hdr{
+    justify-content: center; 
+    align-items: center; 
+    display: flex;
+    height: 70vh;
+   color : red;
+}
+
+    </style>
+    </head>
+    <body>
+         <nav>
+      <h1 id="name">Yash Rajak</h1>
+      <div class="navs">
+        <a href="index.html">Home</a>
+        <a href="project.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+    <hr id="hr-line" />
+    <header class="hdr">
+     <h1>Project Coming Soon<span class="dots"></span></h1>
+    </header>
+    </body>
+</html>
